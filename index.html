@@ -41,9 +41,17 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Шрифты подключены неблокирующе: media="print" снимает их с критического пути,
+         onload возвращает в общий. Иначе недоступный Google Fonts задерживает отрисовку
+         всей страницы до таймаута — до этого момента виден белый экран. -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all';this.onload=null"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Ставим класс до отрисовки: анимации появления включаются только при работающем JS -->
