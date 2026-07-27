@@ -657,72 +657,72 @@
 
                 <div class="reviews__track" id="reviewsTrack" tabindex="0" role="group"
                     aria-label="Карусель отзывов, прокручивается стрелками влево и вправо">
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Летели с двумя детьми, боялись, что рано вставать бессмысленно. Встали в четыре
                             и не пожалели ни секунды: пилот объяснял всё по дороге, а внизу ждал завтрак.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Анна Ковалёва</span>
                             <span class="review__meta">Санкт-Петербург · май 2025</span>
-                        </footer>
-                    </article>
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Взяли «Полное погружение». Отдельное спасибо за Деринкую без толпы — гид повёл нас
                             в семь утра, когда автобусы ещё стояли на парковке.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Дмитрий Ильин</span>
                             <span class="review__meta">Алматы · октябрь 2024</span>
-                        </footer>
-                    </article>
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Полёт отменили из-за ветра — вернули деньги в тот же день и предложили конную прогулку
                             в подарок. Так работают единицы.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Марина Тер-Оганесян</span>
                             <span class="review__meta">Тбилиси · апрель 2025</span>
-                        </footer>
-                    </article>
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 4 из 5">★★★★☆</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 4 из 5">★★★★☆</p>
                         <blockquote class="review__text">
                             Джип-сафари понравилось, но пять часов по грунтовке — тяжеловато для мамы. Предупредите
                             заранее тех, кто едет с пожилыми родителями.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Сергей Батурин</span>
                             <span class="review__meta">Москва · сентябрь 2024</span>
-                        </footer>
-                    </article>
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Ужин в пещере оказался лучшей частью поездки. Хозяин ресторана вынес нам вино из своей
                             бочки и полчаса рассказывал, как его семья вырубала этот зал.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Ольга и Павел Дорошенко</span>
                             <span class="review__meta">Минск · июнь 2025</span>
-                        </footer>
-                    </article>
-                    <article class="review">
-                        <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Приехал один, боялся заскучать в группе. К концу второго дня мы ужинали вчетвером
                             и планировали следующую поездку в Памуккале.
                         </blockquote>
-                        <footer class="review__author">
+                        <figcaption class="review__author">
                             <span class="review__name">Артём Гизатуллин</span>
                             <span class="review__meta">Казань · март 2025</span>
-                        </footer>
-                    </article>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
 
@@ -1056,7 +1056,8 @@
         </button>
         <figure class="lightbox__figure">
             <!-- src подставляет JS: пустой src заставил бы браузер перезапросить страницу -->
-            <img class="lightbox__img" id="lightboxImg" alt="">
+            <img class="lightbox__img" id="lightboxImg"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
             <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
         </figure>
         <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Следующее фото">
