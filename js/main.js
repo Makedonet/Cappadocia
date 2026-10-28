@@ -156,64 +156,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =========================================================
-       ПОЯВЛЕНИЕ БЛОКОВ ПРИ СКРОЛЛЕ
+       РАССВЕТ В ГЁРЕМЕ
+       Время восхода на завтра по упрощённой формуле NOAA (точность —
+       пара минут) и время, когда гостя забирают из отеля к полёту.
+       В Турции круглый год UTC+3, поэтому часовой пояс посетителя не важен.
        ========================================================= */
-    const revealItems = document.querySelectorAll('.reveal');
+    const sunriseTime = document.querySelector('[data-sunrise]');
+    const sunriseNote = document.querySelector('[data-sunrise-note]');
 
-    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-        revealItems.forEach(el => el.classList.add('is-visible'));
-    } else {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry, index) => {
-                if (!entry.isIntersecting) return;
-                // Небольшая лесенка внутри одной пачки — карточки проявляются не одновременно
-                setTimeout(() => entry.target.classList.add('is-visible'), Math.min(index, 5) * 70);
-                observer.unobserve(entry.target);
-            });
-        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    const GOREME = { lat: 38.643, lon: 34.829 };
+    const TURKEY_OFFSET = 3 * 3600e3;
+    const PICKUP_BEFORE = 90 * 60e3;
 
-        revealItems.forEach(el => revealObserver.observe(el));
+    function sunriseUTC(year, month, day, lat, lon) {
+        const rad = Math.PI / 180;
+        const jd = Date.UTC(year, month, day) / 864e5 + 2440587.5;
+        const n = Math.ceil(jd - 2451545 + 0.0008);
+        const meanNoon = n - lon / 360;
+        const anomaly = (357.5291 + 0.98560028 * meanNoon) % 360;
+        const center = 1.9148 * Math.sin(anomaly * rad) + 0.02 * Math.sin(2 * anomaly * rad)
+            + 0.0003 * Math.sin(3 * anomaly * rad);
+        const longitude = (anomaly + center + 180 + 102.9372) % 360;
+        const transit = 2451545 + meanNoon + 0.0053 * Math.sin(anomaly * rad)
+            - 0.0069 * Math.sin(2 * longitude * rad);
+        const sinDecl = Math.sin(longitude * rad) * Math.sin(23.4397 * rad);
+        const cosHour = (Math.sin(-0.833 * rad) - Math.sin(lat * rad) * sinDecl)
+            / (Math.cos(lat * rad) * Math.cos(Math.asin(sinDecl)));
+        const hourAngle = Math.acos(cosHour) / rad;
+        return (transit - hourAngle / 360 - 2440587.5) * 864e5;
     }
 
-    /* =========================================================
-       СЧЁТЧИКИ В ПЕРВОМ ЭКРАНЕ
-       ========================================================= */
-    const counters = document.querySelectorAll('[data-count]');
+    // Время в Турции: сдвигаем метку на UTC+3 и читаем её UTC-полями
+    const turkeyClock = ms => {
+        const d = new Date(ms + TURKEY_OFFSET);
+        return d.getUTCHours() + ':' + String(d.getUTCMinutes()).padStart(2, '0');
+    };
 
-    function runCounter(el) {
-        const target = parseFloat(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const fractional = el.dataset.count.includes('.');
-        const duration = 1100;
-        const start = performance.now();
+    if (sunriseTime && sunriseNote) {
+        const tomorrow = new Date(Date.now() + TURKEY_OFFSET + 864e5);
+        const rise = sunriseUTC(tomorrow.getUTCFullYear(), tomorrow.getUTCMonth(), tomorrow.getUTCDate(),
+            GOREME.lat, GOREME.lon);
+        // Забираем за полтора часа, округляя вниз до пяти минут
+        const pickup = Math.floor((rise - PICKUP_BEFORE) / 3e5) * 3e5;
+        const month = tomorrow.getUTCMonth();
+        const inSeason = month >= 3 && month <= 10;
 
-        function tick(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const value = target * eased;
-            el.textContent = (fractional ? value.toFixed(1) : Math.round(value).toLocaleString('ru-RU')) + suffix;
-            if (progress < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-    }
-
-    if (counters.length) {
-        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-            counters.forEach(el => {
-                el.textContent = (el.dataset.count.includes('.')
-                    ? el.dataset.count
-                    : Number(el.dataset.count).toLocaleString('ru-RU')) + (el.dataset.suffix || '');
-            });
-        } else {
-            const countObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    runCounter(entry.target);
-                    observer.unobserve(entry.target);
-                });
-            }, { threshold: 0.6 });
-            counters.forEach(el => countObserver.observe(el));
-        }
+        sunriseTime.innerHTML = 'Рассвет в Гёреме завтра в <time>' + turkeyClock(rise) + '</time>';
+        sunriseTime.hidden = false;
+        sunriseNote.textContent = inSeason
+            ? 'К полёту заберём вас из отеля в ' + turkeyClock(pickup) + '.'
+            : 'Сезон полётов — с апреля по ноябрь, зимой шары поднимаются реже.';
     }
 
     /* =========================================================
@@ -309,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-modal-open]').forEach(btn => {
         btn.addEventListener('click', () => {
             if (isMenuOpen()) setMenu(false);
-            closeFab();
             openModal(btn.dataset.service);
         });
     });
@@ -365,31 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =========================================================
-       КНОПКА СВЯЗИ
-       ========================================================= */
-    const fab = document.getElementById('fab');
-    const fabToggle = document.getElementById('fabToggle');
-    const fabList = document.getElementById('fabList');
-
-    function setFab(open) {
-        fabList.hidden = !open;
-        fabToggle.setAttribute('aria-expanded', String(open));
-        fabToggle.setAttribute('aria-label', open ? 'Скрыть способы связи' : 'Открыть способы связи');
-    }
-
-    function closeFab() {
-        if (fabToggle.getAttribute('aria-expanded') === 'true') setFab(false);
-    }
-
-    fabToggle.addEventListener('click', () => setFab(fabList.hidden));
-    fabList.addEventListener('click', event => {
-        if (event.target.closest('a')) closeFab();
-    });
-    document.addEventListener('click', event => {
-        if (!fab.contains(event.target)) closeFab();
-    });
-
-    /* =========================================================
        ОБЩИЕ ГОРЯЧИЕ КЛАВИШИ
        Esc закрывает только то, что действительно открыто.
        ========================================================= */
@@ -398,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!lightbox.hidden) closeLightbox();
             else if (!modal.hidden) closeModal();
             else if (isMenuOpen()) setMenu(false);
-            else closeFab();
             return;
         }
 

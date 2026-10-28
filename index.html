@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
     <meta name="description"
-        content="Демо-лендинг туристического агентства по Каппадокии: полёты на воздушных шарах, пешие маршруты по долинам, подземные города. Портфолио-работа — вёрстка без фреймворков и зависимостей.">
+        content="Демо-лендинг туристического агентства по Каппадокии: полёты на воздушных шарах, пешие маршруты по долинам, подземные города. Портфолио-работа — дизайн и вёрстка без фреймворков и зависимостей.">
     <meta name="author" content="Максим">
-    <meta name="theme-color" content="#1C1512">
+    <meta name="theme-color" content="#14234A">
     <meta name="apple-mobile-web-app-title" content="PERIBACA">
     <meta name="application-name" content="PERIBACA">
     <title>PERIBACA — авторские туры по Каппадокии | демо-портфолио</title>
@@ -19,7 +19,7 @@
     <meta property="og:locale" content="ru_RU">
     <meta property="og:title" content="PERIBACA — авторские туры по Каппадокии">
     <meta property="og:description"
-        content="Демо-лендинг турагентства: полёты на шарах, долины Гёреме, подземные города. Адаптивная вёрстка без фреймворков.">
+        content="Демо-лендинг турагентства: полёты на шарах, долины Гёреме, подземные города. Дизайн и вёрстка без фреймворков.">
     <meta property="og:image" content="https://peribaca.vercel.app/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,8 @@
     <link rel="preload" as="image" href="img/hero-desktop.webp" media="(min-width: 641px)" fetchpriority="high">
     <link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 640px)" fetchpriority="high">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,17 +46,14 @@
          onload возвращает в общий. Иначе недоступный Google Fonts задерживает отрисовку
          всей страницы до таймаута — до этого момента виден белый экран. -->
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&family=Sofia+Sans+Extra+Condensed:wght@500..800&display=swap">
     <link rel="stylesheet" media="print" onload="this.media='all';this.onload=null"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&family=Sofia+Sans+Extra+Condensed:wght@500..800&display=swap">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&family=Sofia+Sans+Extra+Condensed:wght@500..800&display=swap">
     </noscript>
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Ставим класс до отрисовки: анимации появления включаются только при работающем JS -->
-    <script>document.documentElement.classList.add('js');</script>
 
     <!-- Микроразметка для поисковиков и ИИ-выдачи -->
     <script type="application/ld+json">
@@ -86,48 +84,50 @@
 </head>
 
 <body>
-    <a class="skip-link" href="#tours">Перейти к списку туров</a>
+    <a class="skip-link" href="#tours">Перейти к маршрутам</a>
+
+    <!-- Знак — «дымоход феи», peribacası: столб туфа под базальтовой шляпкой -->
+    <svg width="0" height="0" class="visually-hidden" aria-hidden="true" focusable="false">
+        <symbol id="mark" viewBox="0 0 24 32">
+            <path d="M9.6 9.5h4.8c.4 7.6 2.3 15 5.6 21.5H4c3.3-6.5 5.2-13.9 5.6-21.5Z" fill="currentColor" />
+            <path d="M4.5 9.5C4.5 5 7.8 2 12 2s7.5 3 7.5 7.5Z" fill="#D59A48" />
+        </symbol>
+    </svg>
 
     <div class="wrapper">
         <!-- ======================= ШАПКА ======================= -->
         <header class="header" id="header">
             <div class="container header__container">
-                <a class="logo header__logo" href="#hero" aria-label="PERIBACA — на главную">
-                    <svg class="logo__mark" width="32" height="34" viewBox="0 0 32 34" aria-hidden="true"
-                        focusable="false">
-                        <path
-                            d="M16 1C8.8 1 3 6.6 3 13.6c0 4.9 3.3 9.3 7.1 12.2h11.8C25.7 22.9 29 18.5 29 13.6 29 6.6 23.2 1 16 1Z"
-                            fill="currentColor" />
-                        <path d="M16 1c-3 0-5.4 5.6-5.4 12.6 0 4.9 1.2 9.3 3 12.2h4.8c1.8-2.9 3-7.3 3-12.2C21.4 6.6 19 1 16 1Z"
-                            fill="#E8A33D" />
-                        <path d="M11.6 27.4h8.8l-1.3 5.1h-6.2l-1.3-5.1Z" fill="currentColor" opacity=".55" />
+                <a class="logo" href="#hero" aria-label="PERIBACA — на главную">
+                    <svg class="logo__mark" width="24" height="32" aria-hidden="true" focusable="false">
+                        <use href="#mark" />
                     </svg>
                     <span class="logo__text">PERIBACA</span>
                 </a>
 
-                <nav class="nav header__nav" id="nav" aria-label="Основная навигация">
+                <nav class="nav" id="nav" aria-label="Основная навигация">
                     <ul class="nav__list">
-                        <li class="nav__item"><a class="nav__link" href="#tours">Туры</a></li>
-                        <li class="nav__item"><a class="nav__link" href="#story">Регион</a></li>
-                        <li class="nav__item"><a class="nav__link" href="#taste">Вкус и ремёсла</a></li>
-                        <li class="nav__item"><a class="nav__link" href="#gallery">Галерея</a></li>
-                        <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
-                        <li class="nav__item"><a class="nav__link" href="#faq">Вопросы</a></li>
-                        <li class="nav__item nav__item--cta">
-                            <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                data-service="Консультация">Забронировать</button>
-                        </li>
+                        <li><a class="nav__link" href="#tours">Маршруты</a></li>
+                        <li><a class="nav__link" href="#packages">Программы</a></li>
+                        <li><a class="nav__link" href="#story">Регион</a></li>
+                        <li><a class="nav__link" href="#taste">Кухня</a></li>
+                        <li><a class="nav__link" href="#gallery">Фото</a></li>
+                        <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+                        <li><a class="nav__link" href="#faq">Вопросы</a></li>
                     </ul>
                 </nav>
 
-                <button class="burger header__burger" type="button" id="burger" aria-label="Открыть меню"
-                    aria-expanded="false" aria-controls="nav">
+                <button class="btn btn--sm header__cta" type="button" data-modal-open
+                    data-service="Консультация">Забронировать</button>
+
+                <button class="burger" type="button" id="burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="nav">
                     <span class="burger__line"></span>
                 </button>
             </div>
         </header>
 
-        <main class="page">
+        <main>
             <!-- ======================= ПЕРВЫЙ ЭКРАН ======================= -->
             <section class="hero" id="hero">
                 <picture class="hero__media">
@@ -136,287 +136,338 @@
                         alt="Воздушные шары поднимаются над скальными долинами Каппадокии на рассвете">
                 </picture>
 
-                <div class="container hero__container">
-                    <div class="hero__content">
-                        <p class="hero__eyebrow">Гёреме · Невшехир · Турция</p>
-                        <h1 class="hero__title">Каппадокия,<br>какой её видно <em>с&nbsp;рассветом</em></h1>
-                        <p class="hero__text">
-                            Небольшие группы, местные гиды и маршруты, которые не найти в стандартных экскурсиях.
-                            Поднимаем в воздух, спускаем под землю и кормим так, что вы вернётесь.
-                        </p>
-                        <div class="hero__actions">
-                            <button class="btn btn--primary btn--lg" type="button" data-scroll-to="#tours">
-                                Выбрать маршрут
-                            </button>
-                            <button class="btn btn--ghost btn--lg" type="button" data-modal-open
-                                data-service="Подбор маршрута">
-                                Подобрать под даты
-                            </button>
+                <div class="container hero__inner">
+                    <h1 class="hero__title">
+                        <span class="hero__line">Каппадокия</span>
+                        <span class="hero__line">с&nbsp;неба, с&nbsp;тропы</span>
+                        <span class="hero__line">и&nbsp;из-под земли</span>
+                    </h1>
+
+                    <div class="hero__foot">
+                        <div class="hero__copy">
+                            <p class="hero__text">
+                                Водим группы до восьми человек с 2013 года. Гиды живут в Гёреме круглый год
+                                и знают, куда не доезжают туристические автобусы.
+                            </p>
+                            <div class="hero__actions">
+                                <button class="btn btn--light" type="button" data-scroll-to="#tours">
+                                    Выбрать маршрут
+                                </button>
+                                <button class="btn btn--line" type="button" data-modal-open
+                                    data-service="Подбор маршрута">
+                                    Подобрать под даты
+                                </button>
+                            </div>
                         </div>
+
+                        <aside class="sunrise" aria-label="Рассвет в Гёреме">
+                            <svg class="sunrise__icon" width="44" height="22" viewBox="0 0 44 22" aria-hidden="true"
+                                focusable="false">
+                                <path d="M10 21a12 12 0 0 1 24 0" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M0 21h44" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            <p class="sunrise__time" data-sunrise hidden></p>
+                            <p class="sunrise__note" data-sunrise-note>
+                                Шары поднимаются на рассвете. К полёту заберём вас из отеля за полтора часа до него.
+                            </p>
+                        </aside>
                     </div>
-
-                    <ul class="stats hero__stats">
-                        <li class="stats__item">
-                            <span class="stats__value" data-count="12">12</span>
-                            <span class="stats__label">лет в регионе</span>
-                        </li>
-                        <li class="stats__item">
-                            <span class="stats__value" data-count="21">21</span>
-                            <span class="stats__label">авторский маршрут</span>
-                        </li>
-                        <li class="stats__item">
-                            <span class="stats__value" data-count="8400" data-suffix="+">8400</span>
-                            <span class="stats__label">гостей с 2013 года</span>
-                        </li>
-                        <li class="stats__item">
-                            <span class="stats__value" data-count="4.9">4.9</span>
-                            <span class="stats__label">средняя оценка</span>
-                        </li>
-                    </ul>
                 </div>
-
-                <a class="hero__scroll" href="#tours" aria-label="Пролистать к турам">
-                    <span class="hero__scroll-line" aria-hidden="true"></span>
-                </a>
             </section>
 
-            <!-- ======================= ТУРЫ ======================= -->
-            <section class="section section--sand tours" id="tours">
-                <div class="container">
-                    <header class="section__head reveal">
-                        <p class="section__eyebrow">Маршруты</p>
-                        <h2 class="section__title">Шесть способов увидеть Каппадокию</h2>
-                        <p class="section__lead">
-                            Каждый маршрут ведёт гид, который живёт здесь круглый год. Группы до восьми человек,
-                            трансфер из отеля и вода — в стоимости.
-                        </p>
-                    </header>
+            <!-- ======================= МАРШРУТЫ: РАЗРЕЗ ДОЛИНЫ ======================= -->
+            <section class="tours" id="tours" aria-labelledby="tours-title">
+                <div class="container tours__head">
+                    <h2 class="h2" id="tours-title">Маршруты</h2>
+                    <p class="lead">
+                        Шесть маршрутов на трёх высотах. Каждый ведёт гид, который живёт здесь круглый год;
+                        трансфер из отеля и вода входят в цену.
+                    </p>
+                </div>
 
-                    <ul class="tours__grid">
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/balloon.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Воздушный шар взлетает над долиной на рассвете">
-                                <span class="tour-card__badge">Хит</span>
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Рассвет на воздушном шаре</h3>
-                                <p class="tour-card__text">
-                                    Подъём в 4:30, кофе у корзины и час над долинами Гёреме. Сертификат и шампанское
-                                    после посадки.
+                <div class="level level--sky">
+                    <div class="container level__inner">
+                        <p class="level__mark"><span class="level__alt">+1000 м</span> потолок полёта</p>
+                        <h3 class="level__title">В небе</h3>
+
+                        <article class="tour tour--feature">
+                            <img class="tour__img" src="img/tours/balloon.webp" width="800" height="600"
+                                loading="lazy" decoding="async" alt="Воздушный шар взлетает над долиной на рассвете">
+                            <div class="tour__body">
+                                <h4 class="tour__title">Рассвет на воздушном шаре</h4>
+                                <p class="tour__text">
+                                    Заберём из отеля затемно, у корзины нальём кофе. Час над долинами Гёреме,
+                                    после посадки — сертификат полёта и бокал шампанского.
                                 </p>
-                                <ul class="tour-card__meta">
-                                    <li>60 минут в воздухе</li>
-                                    <li>16 гостей в корзине</li>
-                                    <li>Апрель — ноябрь</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€180</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
+                                <dl class="facts">
+                                    <div><dt>Длится</dt><dd>60 минут в воздухе</dd></div>
+                                    <div><dt>Группа</dt><dd>до 16 в корзине</dd></div>
+                                    <div><dt>Сезон</dt><dd>апрель — ноябрь</dd></div>
+                                </dl>
+                                <div class="tour__buy">
+                                    <p class="price">€180 <span class="price__unit">за человека</span></p>
+                                    <button class="btn" type="button" data-modal-open
                                         data-service="Рассвет на воздушном шаре">Забронировать</button>
                                 </div>
                             </div>
-                        </li>
+                        </article>
+                    </div>
 
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/valley.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Скальные образования «дымоходы фей» в долине">
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Пешком по Долине роз</h3>
-                                <p class="tour-card__text">
-                                    Восемь километров по руслу древней реки: скальные церкви, виноградники и закат
-                                    у Чавушина.
-                                </p>
-                                <ul class="tour-card__meta">
-                                    <li>4 часа</li>
-                                    <li>Лёгкая сложность</li>
-                                    <li>Круглый год</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€45</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                        data-service="Пешком по Долине роз">Забронировать</button>
-                                </div>
-                            </div>
-                        </li>
+                    <svg class="level__ground" viewBox="0 -36 1440 156" preserveAspectRatio="xMidYMax slice"
+                        aria-hidden="true" focusable="false">
+                        <path
+                            d="M0 120 L0 112 L0 112 Q130 84 260 112 L240 112 Q380 68 520 112 L500 112 Q600 92 700 112 L680 112 Q890 60 1100 112 L1080 112 Q1210 76 1340 112 L1320 112 Q1380 88 1440 112 L1440 112 L1440 120 Z M70.6 120 L70.6 108 C73.1 78.3 85.4 61.6 87.9 54 L80.1 54 Q80.9 40.9 96 42.6 Q111.1 40.9 111.9 54 L104.1 54 C106.6 61.6 118.9 78.3 121.4 108 L121.4 120 Z M96.5 120 L96.5 108 C100 62.9 117.2 37.5 120.6 26 L109.8 26 Q110.9 7.6 132 10 Q153.1 7.6 154.2 26 L143.4 26 C146.8 37.5 164 62.9 167.5 108 L167.5 120 Z M146.2 120 L146.2 108 C148.3 83.8 158.9 70.2 161 64 Q168 47.2 175 64 C177.1 70.2 187.7 83.8 189.8 108 L189.8 120 Z M316.8 120 L316.8 108 C319.9 69.5 335 47.8 338 38 L328.5 38 Q329.5 21.9 348 24 Q366.5 21.9 367.5 38 L358 38 C361 47.8 376.1 69.5 379.2 108 L379.2 120 Z M348.6 120 L348.6 108 C352.9 50.8 373.9 18.6 378.1 4 L364.9 4 Q366.2 -18.4 392 -15.5 Q417.8 -18.4 419.1 4 L405.9 4 C410.1 18.6 431.1 50.8 435.4 108 L435.4 120 Z M408.4 120 L408.4 108 C411.2 75 424.5 56.4 427.2 48 L418.8 48 Q419.6 33.7 436 35.6 Q452.4 33.7 453.2 48 L444.8 48 C447.5 56.4 460.8 75 463.6 108 L463.6 120 Z M451 120 L451 108 C452.9 88.2 462.1 77 463.9 72 Q470 57.4 476.1 72 C477.9 77 487.1 88.2 489 108 L489 120 Z M577.4 120 L577.4 108 C579.7 82.7 590.6 68.4 592.8 62 Q600 44.7 607.2 62 C609.4 68.4 620.3 82.7 622.6 108 L622.6 120 Z M793.1 120 L793.1 108 C795.8 76.1 808.8 58.1 811.4 50 L803.2 50 Q804.1 36.1 820 37.9 Q835.9 36.1 836.8 50 L828.6 50 C831.2 58.1 844.2 76.1 846.9 108 L846.9 120 Z M826.9 120 L826.9 108 C830.8 57.4 849.7 28.9 853.5 16 L841.6 16 Q842.8 -4.2 866 -1.6 Q889.2 -4.2 890.4 16 L878.5 16 C882.3 28.9 901.2 57.4 905.1 108 L905.1 120 Z M863.5 120 L863.5 108 C868.4 43.1 891.8 6.5 896.5 -10 L881.7 -10 Q883.3 -35 912 -31.8 Q940.7 -35 942.3 -10 L927.5 -10 C932.2 6.5 955.6 43.1 960.5 108 L960.5 120 Z M925.4 120 L925.4 108 C928.6 67.3 944.4 44.4 947.6 34 L937.6 34 Q938.7 17.1 958 19.3 Q977.3 17.1 978.4 34 L968.4 34 C971.6 44.4 987.4 67.3 990.6 108 L990.6 120 Z M974.7 120 L974.7 108 C977 81.6 988.3 66.7 990.6 60 Q998 42.1 1005.4 60 C1007.7 66.7 1019 81.6 1021.3 108 L1021.3 120 Z M1148.2 120 L1148.2 108 C1151.2 71.7 1165.6 51.2 1168.5 42 L1159.4 42 Q1160.4 26.6 1178 28.6 Q1195.6 26.6 1196.6 42 L1187.5 42 C1190.4 51.2 1204.8 71.7 1207.8 108 L1207.8 120 Z M1181.4 120 L1181.4 108 C1185.5 55.2 1205.1 25.4 1209 12 L1196.7 12 Q1198 -9 1222 -6.2 Q1246 -9 1247.3 12 L1235 12 C1238.9 25.4 1258.5 55.2 1262.6 108 L1262.6 120 Z M1237.3 120 L1237.3 108 C1239.8 79.4 1251.7 63.3 1254.1 56 L1246.6 56 Q1247.3 43.2 1262 44.9 Q1276.7 43.2 1277.4 56 L1269.9 56 C1272.3 63.3 1284.2 79.4 1286.7 108 L1286.7 120 Z M1371.7 120 L1371.7 108 C1374.5 73.9 1388.2 54.7 1390.9 46 L1382.3 46 Q1383.2 31.4 1400 33.3 Q1416.8 31.4 1417.7 46 L1409.1 46 C1411.8 54.7 1425.5 73.9 1428.3 108 L1428.3 120 Z" />
+                    </svg>
+                </div>
 
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/underground.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Выход из тёмного пещерного тоннеля к скале">
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Подземный город Деринкую</h3>
-                                <p class="tour-card__text">
-                                    Восемь ярусов вниз: вентиляционные шахты, храм, конюшни и жернова-двери,
-                                    которыми закрывались изнутри.
-                                </p>
-                                <ul class="tour-card__meta">
-                                    <li>3 часа</li>
-                                    <li>Группа до 8 человек</li>
-                                    <li>Круглый год</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€55</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                        data-service="Подземный город Деринкую">Забронировать</button>
-                                </div>
-                            </div>
-                        </li>
+                <div class="level level--ground">
+                    <div class="container level__inner">
+                        <p class="level__mark"><span class="level__alt">0 м</span> дно долины, 1100 м над морем</p>
+                        <h3 class="level__title">В долинах</h3>
 
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/safari.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Панорама долин Каппадокии с высоты обзорной площадки">
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Джип-сафари по трём долинам</h3>
-                                <p class="tour-card__text">
-                                    Голубиная, Любви и Мечей — грунтовые дороги, смотровые площадки без туристов
-                                    и пикник у скал.
-                                </p>
-                                <ul class="tour-card__meta">
-                                    <li>5 часов</li>
-                                    <li>4 гостя в джипе</li>
-                                    <li>Март — ноябрь</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€70</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                        data-service="Джип-сафари по трём долинам">Забронировать</button>
-                                </div>
-                            </div>
-                        </li>
+                        <ul class="tour-list">
+                            <li>
+                                <article class="tour">
+                                    <img class="tour__img" src="img/tours/valley.webp" width="800" height="600"
+                                        loading="lazy" decoding="async"
+                                        alt="Скальные образования «дымоходы фей» в долине">
+                                    <div class="tour__body">
+                                        <h4 class="tour__title">Пешком по Долине роз</h4>
+                                        <p class="tour__text">
+                                            Восемь километров по руслу древней реки: скальные церкви, виноградники
+                                            и закат у Чавушина. Подъёмов почти нет, справится любой.
+                                        </p>
+                                        <dl class="facts">
+                                            <div><dt>Длится</dt><dd>4 часа</dd></div>
+                                            <div><dt>Группа</dt><dd>до 8 человек</dd></div>
+                                            <div><dt>Сезон</dt><dd>круглый год</dd></div>
+                                        </dl>
+                                    </div>
+                                    <div class="tour__buy">
+                                        <p class="price">€45 <span class="price__unit">за человека</span></p>
+                                        <button class="btn" type="button" data-modal-open
+                                            data-service="Пешком по Долине роз">Забронировать</button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="tour">
+                                    <img class="tour__img" src="img/tours/safari.webp" width="800" height="600"
+                                        loading="lazy" decoding="async"
+                                        alt="Панорама долин Каппадокии с высоты обзорной площадки">
+                                    <div class="tour__body">
+                                        <h4 class="tour__title">Джип-сафари по трём долинам</h4>
+                                        <p class="tour__text">
+                                            Голубиная, Любви и Мечей: грунтовые дороги, смотровые площадки без
+                                            туристов и пикник у скал. Трясёт — это стоит учесть, если едете
+                                            с пожилыми родителями.
+                                        </p>
+                                        <dl class="facts">
+                                            <div><dt>Длится</dt><dd>5 часов</dd></div>
+                                            <div><dt>Группа</dt><dd>до 4 в машине</dd></div>
+                                            <div><dt>Сезон</dt><dd>март — ноябрь</dd></div>
+                                        </dl>
+                                    </div>
+                                    <div class="tour__buy">
+                                        <p class="price">€70 <span class="price__unit">за человека</span></p>
+                                        <button class="btn" type="button" data-modal-open
+                                            data-service="Джип-сафари по трём долинам">Забронировать</button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="tour">
+                                    <img class="tour__img" src="img/tours/horse.webp" width="800" height="600"
+                                        loading="lazy" decoding="async"
+                                        alt="Лошади у подножия скал с высеченными пещерами">
+                                    <div class="tour__body">
+                                        <h4 class="tour__title">Конная прогулка на закате</h4>
+                                        <p class="tour__text">
+                                            Спокойный шаг для новичков и рысь для тех, кто в седле не впервые.
+                                            Лошадей подбираем по опыту всадника.
+                                        </p>
+                                        <dl class="facts">
+                                            <div><dt>Длится</dt><dd>2 часа</dd></div>
+                                            <div><dt>Группа</dt><dd>до 8, с 12 лет</dd></div>
+                                            <div><dt>Сезон</dt><dd>круглый год</dd></div>
+                                        </dl>
+                                    </div>
+                                    <div class="tour__buy">
+                                        <p class="price">€60 <span class="price__unit">за человека</span></p>
+                                        <button class="btn" type="button" data-modal-open
+                                            data-service="Конная прогулка на закате">Забронировать</button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="tour">
+                                    <img class="tour__img" src="img/tours/evening.webp" width="800" height="600"
+                                        loading="lazy" decoding="async" alt="Вечерний Гёреме в огнях, вид сверху">
+                                    <div class="tour__body">
+                                        <h4 class="tour__title">Вечерний Гёреме и ужин в пещере</h4>
+                                        <p class="tour__text">
+                                            Город в огнях со смотровой площадки, вина из местного винограда
+                                            и ужин в зале, высеченном в туфе.
+                                        </p>
+                                        <dl class="facts">
+                                            <div><dt>Длится</dt><dd>3 часа</dd></div>
+                                            <div><dt>Группа</dt><dd>до 8 человек</dd></div>
+                                            <div><dt>Сезон</dt><dd>круглый год</dd></div>
+                                        </dl>
+                                    </div>
+                                    <div class="tour__buy">
+                                        <p class="price">€50 <span class="price__unit">с ужином</span></p>
+                                        <button class="btn" type="button" data-modal-open
+                                            data-service="Вечерний Гёреме и ужин в пещере">Забронировать</button>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/horse.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Лошади у подножия скал с высеченными пещерами">
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Конная прогулка на закате</h3>
-                                <p class="tour-card__text">
-                                    «Каппадокия» — страна прекрасных лошадей. Спокойные маршруты для новичков
-                                    и рысь для тех, кто в седле не впервые.
-                                </p>
-                                <ul class="tour-card__meta">
-                                    <li>2 часа</li>
-                                    <li>С 12 лет</li>
-                                    <li>Круглый год</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€60</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                        data-service="Конная прогулка на закате">Забронировать</button>
-                                </div>
-                            </div>
-                        </li>
+                <div class="level level--under">
+                    <div class="container level__inner">
+                        <p class="level__mark"><span class="level__alt">−85 м</span> нижний ярус Деринкую</p>
+                        <h3 class="level__title">Под землёй</h3>
 
-                        <li class="tour-card reveal">
-                            <div class="tour-card__media">
-                                <img src="img/tours/evening.webp" width="800" height="600" loading="lazy"
-                                    decoding="async" alt="Вечерний Гёреме в огнях, вид сверху">
-                            </div>
-                            <div class="tour-card__body">
-                                <h3 class="tour-card__title">Вечерний Гёреме и ужин в пещере</h3>
-                                <p class="tour-card__text">
-                                    Панорама города в огнях, дегустация вин из местного винограда и ужин
-                                    в зале, высеченном в туфе.
+                        <article class="tour">
+                            <img class="tour__img" src="img/tours/underground.webp" width="800" height="600"
+                                loading="lazy" decoding="async" alt="Выход из тёмного пещерного тоннеля к скале">
+                            <div class="tour__body">
+                                <h4 class="tour__title">Подземный город Деринкую</h4>
+                                <p class="tour__text">
+                                    Восемь ярусов вниз: вентиляционные шахты, храм, конюшни и каменные двери-жернова,
+                                    которыми жители закрывались изнутри. Внизу +13 °C в любой сезон.
                                 </p>
-                                <ul class="tour-card__meta">
-                                    <li>3 часа</li>
-                                    <li>Ужин включён</li>
-                                    <li>Круглый год</li>
-                                </ul>
-                                <div class="tour-card__footer">
-                                    <p class="price"><span class="price__value">€50</span><span
-                                            class="price__unit">/ чел.</span></p>
-                                    <button class="btn btn--primary btn--sm" type="button" data-modal-open
-                                        data-service="Вечерний Гёреме и ужин в пещере">Забронировать</button>
-                                </div>
+                                <dl class="facts">
+                                    <div><dt>Длится</dt><dd>3 часа</dd></div>
+                                    <div><dt>Группа</dt><dd>до 8 человек</dd></div>
+                                    <div><dt>Сезон</dt><dd>круглый год</dd></div>
+                                </dl>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="tour__buy">
+                                <p class="price">€55 <span class="price__unit">за человека</span></p>
+                                <button class="btn btn--light" type="button" data-modal-open
+                                    data-service="Подземный город Деринкую">Забронировать</button>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
 
-            <!-- ======================= ПАКЕТЫ ======================= -->
-            <section class="section packages" id="packages">
+            <!-- ======================= ПРОГРАММЫ ======================= -->
+            <section class="section packages" id="packages" aria-labelledby="packages-title">
                 <div class="container">
-                    <header class="section__head reveal">
-                        <p class="section__eyebrow">Пакеты</p>
-                        <h2 class="section__title">Если хочется всё сразу</h2>
-                        <p class="section__lead">
-                            Собрали маршруты в программы с проживанием в пещерном отеле и трансферами от аэропорта.
-                            Цена — за человека при двухместном размещении.
+                    <div class="section__head">
+                        <h2 class="h2" id="packages-title">Программы на&nbsp;несколько дней</h2>
+                        <p class="lead">
+                            Маршруты, собранные вместе, с пещерным отелем и трансфером из аэропорта. Цена —
+                            за человека при двухместном размещении.
                         </p>
-                    </header>
+                    </div>
 
-                    <ul class="packages__grid">
-                        <li class="plan reveal">
-                            <h3 class="plan__name">Классика</h3>
-                            <p class="plan__price"><span>€290</span> / 2 дня</p>
-                            <p class="plan__note">Первый раз в Каппадокии</p>
-                            <ul class="plan__list">
-                                <li>Полёт на воздушном шаре</li>
-                                <li>Пеший маршрут по Долине роз</li>
-                                <li>2 ночи в пещерном отеле 4★</li>
-                                <li>Трансфер Кайсери — Гёреме</li>
-                                <li>Завтраки</li>
-                            </ul>
-                            <button class="btn btn--outline btn--block" type="button" data-modal-open
-                                data-service="Пакет «Классика»">Оставить заявку</button>
-                        </li>
-
-                        <li class="plan plan--featured reveal">
-                            <span class="plan__badge">Выбирают чаще всего</span>
-                            <h3 class="plan__name">Полное погружение</h3>
-                            <p class="plan__price"><span>€540</span> / 4 дня</p>
-                            <p class="plan__note">Регион целиком, без спешки</p>
-                            <ul class="plan__list">
-                                <li>Всё из пакета «Классика»</li>
-                                <li>Подземный город Деринкую</li>
-                                <li>Джип-сафари по трём долинам</li>
-                                <li>Гончарная мастерская в Аваносе</li>
-                                <li>Ужин в пещерном ресторане</li>
-                                <li>4 ночи в пещерном отеле 4★</li>
-                            </ul>
-                            <button class="btn btn--primary btn--block" type="button" data-modal-open
-                                data-service="Пакет «Полное погружение»">Оставить заявку</button>
-                        </li>
-
-                        <li class="plan reveal">
-                            <h3 class="plan__name">Приват</h3>
-                            <p class="plan__price"><span>по запросу</span></p>
-                            <p class="plan__note">Свой темп и свой водитель</p>
-                            <ul class="plan__list">
-                                <li>Маршрут собирается под вас</li>
-                                <li>Личный гид и автомобиль</li>
-                                <li>Фотосъёмка на рассвете</li>
-                                <li>Приватная корзина воздушного шара</li>
-                                <li>Бронь ресторанов и отелей</li>
-                            </ul>
-                            <button class="btn btn--outline btn--block" type="button" data-modal-open
-                                data-service="Пакет «Приват»">Обсудить программу</button>
-                        </li>
-                    </ul>
+                    <div class="plans-wrap">
+                        <table class="plans" role="table">
+                            <caption class="visually-hidden">Что входит в каждую программу</caption>
+                            <thead role="rowgroup">
+                                <tr role="row">
+                                    <td role="cell"></td>
+                                    <th scope="col" role="columnheader">
+                                        <span class="plans__name">Классика</span>
+                                        <span class="plans__price">€290</span>
+                                        <span class="plans__term">2 дня. Если вы здесь впервые</span>
+                                    </th>
+                                    <th scope="col" role="columnheader">
+                                        <span class="plans__name">Полное погружение</span>
+                                        <span class="plans__price">€540</span>
+                                        <span class="plans__term">4 дня. Регион целиком, без спешки</span>
+                                    </th>
+                                    <th scope="col" role="columnheader">
+                                        <span class="plans__name">Приват</span>
+                                        <span class="plans__price">по запросу</span>
+                                        <span class="plans__term">Свой темп, свой гид и машина</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody role="rowgroup">
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Полёт на воздушном шаре</th>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell">отдельная корзина</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Пешком по Долине роз</th>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell" class="plans__any">по желанию</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Подземный город Деринкую</th>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell" class="plans__any">по желанию</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Джип-сафари по трём долинам</th>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell" class="plans__any">по желанию</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Гончарная мастерская в Аваносе</th>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell" class="plans__any">по желанию</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Ужин в пещерном ресторане</th>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                    <td role="cell" class="plans__any">по желанию</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Пещерный отель 4★ с завтраками</th>
+                                    <td role="cell">2 ночи</td>
+                                    <td role="cell">4 ночи</td>
+                                    <td role="cell">подберём и забронируем</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Трансфер из аэропорта Кайсери</th>
+                                    <td role="cell">групповой</td>
+                                    <td role="cell">групповой</td>
+                                    <td role="cell">личный водитель</td>
+                                </tr>
+                                <tr role="row">
+                                    <th scope="row" role="rowheader">Фотосъёмка на рассвете</th>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="no" aria-hidden="true">—</span><span class="visually-hidden">не входит</span></td>
+                                    <td role="cell"><span class="yes" aria-hidden="true">✓</span><span class="visually-hidden">входит</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot role="rowgroup">
+                                <tr role="row">
+                                    <td role="cell"></td>
+                                    <td role="cell"><button class="btn btn--line-dark" type="button" data-modal-open
+                                            data-service="Программа «Классика»">Оставить заявку</button></td>
+                                    <td role="cell"><button class="btn" type="button" data-modal-open
+                                            data-service="Программа «Полное погружение»">Оставить заявку</button></td>
+                                    <td role="cell"><button class="btn btn--line-dark" type="button" data-modal-open
+                                            data-service="Программа «Приват»">Обсудить</button></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </section>
 
-            <!-- ======================= РЕГИОН И ИСТОРИЯ ======================= -->
-            <section class="section section--dark story" id="story">
+            <!-- ======================= РЕГИОН ======================= -->
+            <section class="section section--lapis story" id="story" aria-labelledby="story-title">
                 <div class="container">
                     <div class="story__intro">
-                        <div class="story__text reveal">
-                            <p class="section__eyebrow">Регион</p>
-                            <h2 class="section__title">Ландшафт, который вырезали ветер и люди</h2>
+                        <div class="story__text">
+                            <h2 class="h2" id="story-title">Откуда здесь такие скалы</h2>
                             <p>
                                 Каппадокия лежит на плато в центре Анатолии, на высоте около 1000 метров. Вулканы
                                 Эрджиес и Хасандаг засыпали долину пеплом, тот слежался в туф — породу настолько
@@ -424,202 +475,220 @@
                                 тысячу лет.
                             </p>
                             <p>
-                                Дожди и ветер вымыли из туфа столбы с базальтовыми «шляпами» — те самые
-                                <em lang="tr">peribacaları</em>, «дымоходы фей», в честь которых названо наше
-                                агентство. Люди продолжили работу стихии: выдолбили в скалах жилища, храмы,
-                                голубятни и целые города под землёй.
+                                Дожди и ветер вымыли из туфа столбы с базальтовыми шляпками — те самые
+                                <i lang="tr">peribacaları</i>, «дымоходы фей». В их честь названо агентство, и один
+                                такой столб стоит у нас в логотипе. Люди продолжили работу стихии: выдолбили в скалах
+                                жилища, храмы, голубятни и целые города под землёй.
                             </p>
                         </div>
 
                         <div class="story__collage">
-                            <img class="story__img story__img--tall reveal" src="img/story/dwellings.webp" width="700"
+                            <img class="story__img story__img--arch" src="img/story/dwellings.webp" width="700"
                                 height="933" loading="lazy" decoding="async"
                                 alt="Многоярусные жилища, высеченные в туфовой скале">
-                            <img class="story__img story__img--wide reveal" src="img/story/uchisar.webp" width="900"
-                                height="600" loading="lazy" decoding="async"
-                                alt="Скальная крепость Учхисар над посёлком">
-                            <img class="story__img story__img--tall reveal" src="img/story/interior.webp" width="700"
-                                height="933" loading="lazy" decoding="async"
-                                alt="Женщина идёт по залу, вырубленному внутри скалы">
+                            <img class="story__img" src="img/story/uchisar.webp" width="900" height="600"
+                                loading="lazy" decoding="async" alt="Скальная крепость Учхисар над посёлком">
+                            <img class="story__img" src="img/story/interior.webp" width="700" height="933"
+                                loading="lazy" decoding="async" alt="Женщина идёт по залу, вырубленному внутри скалы">
                         </div>
                     </div>
 
+                    <h3 class="story__subtitle">Как это получилось</h3>
                     <ol class="timeline">
-                        <li class="timeline__item reveal">
-                            <p class="timeline__date">60 млн лет назад</p>
-                            <h3 class="timeline__title">Вулканы засыпают плато</h3>
+                        <li class="timeline__item">
+                            <p class="timeline__date">10 млн лет назад</p>
+                            <h4 class="timeline__title">Вулканы засыпают плато</h4>
                             <p class="timeline__text">Извержения Эрджиеса и Хасандага оставляют слои пепла толщиной
-                                до 150 метров. Со временем они спекаются в туф.</p>
+                                в десятки метров. Со временем они спекаются в туф.</p>
                         </li>
-                        <li class="timeline__item reveal">
-                            <p class="timeline__date">IV век до н. э.</p>
-                            <h3 class="timeline__title">Первые высеченные жилища</h3>
-                            <p class="timeline__text">Область упоминается как <span lang="grc">Καππαδοκία</span> —
-                                от древнеперсидского «страна прекрасных лошадей».</p>
+                        <li class="timeline__item">
+                            <p class="timeline__date">VI век до н. э.</p>
+                            <h4 class="timeline__title">Имя в персидских надписях</h4>
+                            <p class="timeline__text">В надписях Дария область названа Катпатука — название принято
+                                переводить как «страна прекрасных лошадей».</p>
                         </li>
-                        <li class="timeline__item reveal">
+                        <li class="timeline__item">
                             <p class="timeline__date">IV—XI века</p>
-                            <h3 class="timeline__title">Пещерные монастыри Гёреме</h3>
+                            <h4 class="timeline__title">Пещерные монастыри Гёреме</h4>
                             <p class="timeline__text">В скалах вырубают сотни церквей с фресками. Многие росписи
-                                сохранились до наших дней — сухой воздух работает лучше реставраторов.</p>
+                                целы до сих пор — сухой воздух работает лучше реставраторов.</p>
                         </li>
-                        <li class="timeline__item reveal">
-                            <p class="timeline__date">VII—X века</p>
-                            <h3 class="timeline__title">Города уходят под землю</h3>
+                        <li class="timeline__item">
+                            <p class="timeline__date">VIII—XII века</p>
+                            <h4 class="timeline__title">Города уходят под землю</h4>
                             <p class="timeline__text">Деринкую и Каймаклы разрастаются на восемь ярусов вниз.
                                 В убежищах помещались тысячи людей вместе со скотом и запасами.</p>
                         </li>
-                        <li class="timeline__item reveal">
+                        <li class="timeline__item">
                             <p class="timeline__date">1985 год</p>
-                            <h3 class="timeline__title">Список ЮНЕСКО</h3>
+                            <h4 class="timeline__title">Список ЮНЕСКО</h4>
                             <p class="timeline__text">Национальный парк Гёреме и скальные памятники Каппадокии
                                 вносят в список Всемирного наследия.</p>
                         </li>
-                        <li class="timeline__item reveal">
+                        <li class="timeline__item">
                             <p class="timeline__date">Сегодня</p>
-                            <h3 class="timeline__title">До 150 шаров каждое утро</h3>
-                            <p class="timeline__text">В высокий сезон полёты начинаются за час до восхода —
-                                и заканчиваются, как только поднимается ветер.</p>
+                            <h4 class="timeline__title">До 150 шаров каждое утро</h4>
+                            <p class="timeline__text">В высокий сезон шары стартуют затемно и садятся, как только
+                                поднимается ветер.</p>
                         </li>
                     </ol>
                 </div>
             </section>
 
-            <!-- ======================= ВКУС И РЕМЁСЛА ======================= -->
-            <section class="section section--sand taste" id="taste">
+            <!-- ======================= КУХНЯ И РЕМЁСЛА ======================= -->
+            <section class="section taste" id="taste" aria-labelledby="taste-title">
                 <div class="container">
-                    <header class="section__head reveal">
-                        <p class="section__eyebrow">Вкус и ремёсла</p>
-                        <h2 class="section__title">Всё, что готовится долго</h2>
-                        <p class="section__lead">
-                            Анатолийская кухня не терпит спешки: мясо томится в запечатанном горшке, тесто
-                            раскатывают вручную, глину сушат неделями. Мы водим туда, где это ещё делают всерьёз.
+                    <div class="section__head">
+                        <h2 class="h2" id="taste-title">Кухня и ремёсла</h2>
+                        <p class="lead">
+                            Здесь ничего не делают быстро: мясо томится в запечатанном кувшине, тесто раскатывают
+                            вручную, глину сушат неделями. Мы водим туда, где это ещё делают всерьёз.
                         </p>
-                    </header>
+                    </div>
 
-                    <div class="taste__feature reveal">
+                    <div class="taste__feature">
                         <img src="img/food/terrace.webp" width="1000" height="666" loading="lazy" decoding="async"
                             alt="Накрытый завтрак на террасе с видом на скальные дома Гёреме">
                         <div class="taste__feature-body">
-                            <h3 class="taste__feature-title">Завтрак на крыше в Гёреме</h3>
+                            <h3 class="h3">Завтрак на крыше в Гёреме</h3>
                             <p>
-                                Турецкий завтрак — это не приём пищи, а полтора часа: десяток пиалок, свежий
-                                симит, мёд с каймаком и бесконечный чай. Мы начинаем с него каждый день
-                                в пакетных турах.
+                                Турецкий завтрак — это полтора часа: десяток пиалок, свежий симит, мёд с каймаком
+                                и бесконечный чай. С него начинается каждый день наших программ.
                             </p>
                         </div>
                     </div>
 
-                    <ul class="taste__grid">
-                        <li class="taste-card reveal">
-                            <img src="img/food/kebab.webp" width="800" height="600" loading="lazy" decoding="async"
-                                alt="Мясо и овощи на гриле с гарнирами">
-                            <h3 class="taste-card__title">Тести-кебаб</h3>
-                            <p class="taste-card__text">Мясо с овощами томится в глиняном горшке, запечатанном
-                                тестом. Горшок разбивают у стола — это часть представления.</p>
-                        </li>
-                        <li class="taste-card reveal">
-                            <img src="img/food/breakfast.webp" width="800" height="600" loading="lazy"
-                                decoding="async" alt="Турецкий завтрак: сыры, оливки, яйца и варенья">
-                            <h3 class="taste-card__title">Кайвалты</h3>
-                            <p class="taste-card__text">Сыры, оливки, менемен, варенья из абрикоса и шелковицы.
-                                Обязательно чай из двойного чайника — крепкий разбавляют кипятком.</p>
-                        </li>
-                        <li class="taste-card reveal">
-                            <img src="img/food/baklava.webp" width="800" height="600" loading="lazy" decoding="async"
-                                alt="Пахлава с фисташкой на белой тарелке">
-                            <h3 class="taste-card__title">Пахлава и локма</h3>
-                            <p class="taste-card__text">Сорок слоёв теста толщиной с бумагу, фисташка из
-                                Газиантепа и сироп, который подают тёплым.</p>
-                        </li>
-                        <li class="taste-card reveal">
-                            <img src="img/food/pottery.webp" width="800" height="600" loading="lazy" decoding="async"
-                                alt="Руки гончара за работой на гончарном круге">
-                            <h3 class="taste-card__title">Гончары Аваноса</h3>
-                            <p class="taste-card__text">Красную глину берут из реки Кызылырмак. В мастерских
-                                работают на ножном круге — как четыре тысячи лет назад.</p>
-                        </li>
-                        <li class="taste-card reveal">
-                            <img src="img/food/ceramics.webp" width="800" height="600" loading="lazy"
-                                decoding="async" alt="Расписные керамические тарелки на стене мастерской">
-                            <h3 class="taste-card__title">Изникская роспись</h3>
-                            <p class="taste-card__text">Кобальт, бирюза и «армянский боле» — красный, который
-                                умеют получать всего несколько мастерских в стране.</p>
-                        </li>
-                        <li class="taste-card taste-card--note reveal">
-                            <h3 class="taste-card__title">Что попробовать в сезон</h3>
-                            <ul class="taste-card__list">
-                                <li><strong>Весна:</strong> свежий сыр из козьего молока</li>
-                                <li><strong>Лето:</strong> абрикосы из долины Кызылырмак</li>
-                                <li><strong>Осень:</strong> молодое вино из винограда «эмир»</li>
-                                <li><strong>Зима:</strong> тархана — суп на сушёной закваске</li>
+                    <div class="taste__cols">
+                        <div class="taste__col">
+                            <h3 class="taste__col-title">На столе</h3>
+                            <ul class="dish-list">
+                                <li class="dish">
+                                    <img src="img/food/kebab.webp" width="800" height="600" loading="lazy"
+                                        decoding="async" alt="Мясо и овощи на гриле с гарнирами">
+                                    <div>
+                                        <h4 class="dish__name">Тести-кебаб</h4>
+                                        <p class="dish__text">Мясо с овощами томится в глиняном кувшине,
+                                            запечатанном тестом. Кувшин разбивают прямо у стола.</p>
+                                    </div>
+                                </li>
+                                <li class="dish">
+                                    <img src="img/food/breakfast.webp" width="800" height="600" loading="lazy"
+                                        decoding="async" alt="Турецкий завтрак: сыры, оливки, яйца и варенья">
+                                    <div>
+                                        <h4 class="dish__name">Кахвалты</h4>
+                                        <p class="dish__text">Сыры, оливки, менемен, варенья из абрикоса
+                                            и шелковицы. Чай из двойного чайника: крепкую заварку разбавляют
+                                            кипятком.</p>
+                                    </div>
+                                </li>
+                                <li class="dish">
+                                    <img src="img/food/baklava.webp" width="800" height="600" loading="lazy"
+                                        decoding="async" alt="Пахлава с фисташкой на белой тарелке">
+                                    <div>
+                                        <h4 class="dish__name">Пахлава и локма</h4>
+                                        <p class="dish__text">Сорок слоёв теста толщиной с бумагу, фисташка
+                                            из Газиантепа и тёплый сироп.</p>
+                                    </div>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <div class="taste__col">
+                            <h3 class="taste__col-title">В мастерских</h3>
+                            <ul class="dish-list">
+                                <li class="dish">
+                                    <img src="img/food/pottery.webp" width="800" height="600" loading="lazy"
+                                        decoding="async" alt="Руки гончара за работой на гончарном круге">
+                                    <div>
+                                        <h4 class="dish__name">Гончары Аваноса</h4>
+                                        <p class="dish__text">Глину берут со дна Кызылырмака — Красной реки.
+                                            Мастера до сих пор работают на ножном круге.</p>
+                                    </div>
+                                </li>
+                                <li class="dish">
+                                    <img src="img/food/ceramics.webp" width="800" height="600" loading="lazy"
+                                        decoding="async" alt="Расписные керамические тарелки на стене мастерской">
+                                    <div>
+                                        <h4 class="dish__name">Изникская роспись</h4>
+                                        <p class="dish__text">Кобальт, бирюза и «армянский болюс» — красный,
+                                            который умеют получать всего несколько мастерских в стране.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="taste__col">
+                            <h3 class="taste__col-title">Что попробовать в сезон</h3>
+                            <dl class="seasons">
+                                <div><dt>Весна</dt><dd>свежий сыр из козьего молока</dd></div>
+                                <div><dt>Лето</dt><dd>абрикосы из долины Кызылырмака</dd></div>
+                                <div><dt>Осень</dt><dd>молодое вино из винограда эмир</dd></div>
+                                <div><dt>Зима</dt><dd>тархана — суп на сушёной закваске</dd></div>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- ======================= ГАЛЕРЕЯ ======================= -->
-            <section class="section gallery" id="gallery">
+            <!-- ======================= ФОТО ======================= -->
+            <section class="section section--deep gallery" id="gallery" aria-labelledby="gallery-title">
                 <div class="container">
-                    <header class="section__head reveal">
-                        <p class="section__eyebrow">Галерея</p>
-                        <h2 class="section__title">Снимки наших групп</h2>
-                        <p class="section__lead">Восемь кадров без обработки — так это выглядит вживую.
-                            Нажмите на любой, чтобы открыть крупно.</p>
-                    </header>
+                    <div class="section__head">
+                        <h2 class="h2" id="gallery-title">Снимки с маршрутов</h2>
+                        <p class="lead">Нажмите на снимок, чтобы открыть его крупно.</p>
+                    </div>
 
                     <ul class="gallery__grid">
-                        <li class="gallery__item reveal">
-                            <button class="gallery__btn" type="button" data-full="img/gallery/arch-full.webp"
-                                data-caption="Смотровая площадка пещерного отеля, Гёреме">
-                                <img src="img/gallery/arch.webp" width="640" height="427" loading="lazy"
-                                    decoding="async" alt="Вид на скалы через каменную арку пещерного отеля">
+                        <li class="gallery__item">
+                            <button class="gallery__btn" type="button" data-full="img/gallery/balloons-full.webp"
+                                data-caption="Старт шаров затемно, долина Гёреме">
+                                <img src="img/gallery/balloons.webp" width="640" height="427" loading="lazy"
+                                    decoding="async" alt="Десятки воздушных шаров над долиной в утренней дымке">
                             </button>
                         </li>
-                        <li class="gallery__item reveal">
+                        <li class="gallery__item">
                             <button class="gallery__btn" type="button" data-full="img/gallery/stairs-full.webp"
                                 data-caption="Лестница к верхнему ярусу скального жилища">
                                 <img src="img/gallery/stairs.webp" width="640" height="959" loading="lazy"
                                     decoding="async" alt="Каменная лестница, ведущая к входу в скальное жилище">
                             </button>
                         </li>
-                        <li class="gallery__item reveal">
+                        <li class="gallery__item">
                             <button class="gallery__btn" type="button" data-full="img/gallery/chimneys-full.webp"
                                 data-caption="«Дымоходы фей» в долине Гёреме">
                                 <img src="img/gallery/chimneys.webp" width="640" height="427" loading="lazy"
                                     decoding="async" alt="Скальные конусы с высеченными окнами и входами">
                             </button>
                         </li>
-                        <li class="gallery__item reveal">
-                            <button class="gallery__btn" type="button" data-full="img/gallery/balloons-full.webp"
-                                data-caption="Старт шаров за час до восхода">
-                                <img src="img/gallery/balloons.webp" width="640" height="427" loading="lazy"
-                                    decoding="async" alt="Десятки воздушных шаров над долиной в утренней дымке">
-                            </button>
-                        </li>
-                        <li class="gallery__item reveal">
-                            <button class="gallery__btn" type="button" data-full="img/gallery/monastery-full.webp"
-                                data-caption="Скальный монастырь на склоне долины">
-                                <img src="img/gallery/monastery.webp" width="640" height="427" loading="lazy"
-                                    decoding="async" alt="Склон холма с множеством пещерных келий">
-                            </button>
-                        </li>
-                        <li class="gallery__item reveal">
+                        <li class="gallery__item">
                             <button class="gallery__btn" type="button" data-full="img/gallery/door-full.webp"
                                 data-caption="Деревянная дверь в туфовой скале">
                                 <img src="img/gallery/door.webp" width="640" height="427" loading="lazy"
                                     decoding="async" alt="Резная деревянная дверь входа, высеченного в скале">
                             </button>
                         </li>
-                        <li class="gallery__item reveal">
+                        <li class="gallery__item">
+                            <button class="gallery__btn" type="button" data-full="img/gallery/monastery-full.webp"
+                                data-caption="Скальный монастырь на склоне долины">
+                                <img src="img/gallery/monastery.webp" width="640" height="427" loading="lazy"
+                                    decoding="async" alt="Склон холма с множеством пещерных келий">
+                            </button>
+                        </li>
+                        <li class="gallery__item">
+                            <button class="gallery__btn" type="button" data-full="img/gallery/arch-full.webp"
+                                data-caption="Смотровая площадка пещерного отеля, Гёреме">
+                                <img src="img/gallery/arch.webp" width="640" height="427" loading="lazy"
+                                    decoding="async" alt="Вид на скалы через каменную арку пещерного отеля">
+                            </button>
+                        </li>
+                        <li class="gallery__item">
                             <button class="gallery__btn" type="button" data-full="img/gallery/terrace-full.webp"
                                 data-caption="Внутренний двор пещерного отеля">
                                 <img src="img/gallery/terrace.webp" width="640" height="480" loading="lazy"
                                     decoding="async" alt="Столики во внутреннем дворе отеля у скальной стены">
                             </button>
                         </li>
-                        <li class="gallery__item reveal">
+                        <li class="gallery__item">
                             <button class="gallery__btn" type="button" data-full="img/gallery/hotel-full.webp"
                                 data-caption="Ужин на террасе после заката">
                                 <img src="img/gallery/hotel.webp" width="640" height="480" loading="lazy"
@@ -631,111 +700,105 @@
             </section>
 
             <!-- ======================= ОТЗЫВЫ ======================= -->
-            <section class="section section--sand reviews" id="reviews">
+            <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
                 <div class="container">
-                    <header class="section__head section__head--row reveal">
-                        <div>
-                            <p class="section__eyebrow">Отзывы</p>
-                            <h2 class="section__title">Что пишут после поездки</h2>
-                        </div>
+                    <div class="section__head section__head--row">
+                        <h2 class="h2" id="reviews-title">Отзывы гостей</h2>
                         <div class="reviews__nav">
                             <button class="reviews__arrow" type="button" id="reviewsPrev" aria-label="Предыдущий отзыв">
-                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
+                                        stroke-linecap="square" />
                                 </svg>
                             </button>
                             <button class="reviews__arrow" type="button" id="reviewsNext" aria-label="Следующий отзыв">
-                                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                     <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
+                                        stroke-linecap="square" />
                                 </svg>
                             </button>
                         </div>
-                    </header>
+                    </div>
                 </div>
 
                 <div class="reviews__track" id="reviewsTrack" tabindex="0" role="group"
-                    aria-label="Карусель отзывов, прокручивается стрелками влево и вправо">
+                    aria-label="Отзывы, прокручиваются стрелками влево и вправо">
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Летели с двумя детьми, боялись, что рано вставать бессмысленно. Встали в четыре
-                            и не пожалели ни секунды: пилот объяснял всё по дороге, а внизу ждал завтрак.
+                            и не пожалели: пилот объяснял всё по дороге, а внизу ждал завтрак.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Анна Ковалёва</span>
-                            <span class="review__meta">Санкт-Петербург · май 2025</span>
+                            <span class="review__meta">Санкт-Петербург, май 2025</span>
+                            <span class="review__rating">Оценка 5 из 5</span>
                         </figcaption>
                     </figure>
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Взяли «Полное погружение». Отдельное спасибо за Деринкую без толпы — гид повёл нас
                             в семь утра, когда автобусы ещё стояли на парковке.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Дмитрий Ильин</span>
-                            <span class="review__meta">Алматы · октябрь 2024</span>
+                            <span class="review__meta">Алматы, октябрь 2024</span>
+                            <span class="review__rating">Оценка 5 из 5</span>
                         </figcaption>
                     </figure>
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
-                            Полёт отменили из-за ветра — вернули деньги в тот же день и предложили конную прогулку
-                            в подарок. Так работают единицы.
+                            Полёт отменили из-за ветра. Деньги вернули в тот же день, а вместо шара бесплатно
+                            свозили на конную прогулку.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Марина Тер-Оганесян</span>
-                            <span class="review__meta">Тбилиси · апрель 2025</span>
+                            <span class="review__meta">Тбилиси, апрель 2025</span>
+                            <span class="review__rating">Оценка 5 из 5</span>
                         </figcaption>
                     </figure>
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 4 из 5">★★★★☆</p>
                         <blockquote class="review__text">
                             Джип-сафари понравилось, но пять часов по грунтовке — тяжеловато для мамы. Предупредите
                             заранее тех, кто едет с пожилыми родителями.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Сергей Батурин</span>
-                            <span class="review__meta">Москва · сентябрь 2024</span>
+                            <span class="review__meta">Москва, сентябрь 2024</span>
+                            <span class="review__rating">Оценка 4 из 5</span>
                         </figcaption>
                     </figure>
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Ужин в пещере оказался лучшей частью поездки. Хозяин ресторана вынес нам вино из своей
                             бочки и полчаса рассказывал, как его семья вырубала этот зал.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Ольга и Павел Дорошенко</span>
-                            <span class="review__meta">Минск · июнь 2025</span>
+                            <span class="review__meta">Минск, июнь 2025</span>
+                            <span class="review__rating">Оценка 5 из 5</span>
                         </figcaption>
                     </figure>
                     <figure class="review">
-                        <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
                         <blockquote class="review__text">
                             Приехал один, боялся заскучать в группе. К концу второго дня мы ужинали вчетвером
                             и планировали следующую поездку в Памуккале.
                         </blockquote>
                         <figcaption class="review__author">
                             <span class="review__name">Артём Гизатуллин</span>
-                            <span class="review__meta">Казань · март 2025</span>
+                            <span class="review__meta">Казань, март 2025</span>
+                            <span class="review__rating">Оценка 5 из 5</span>
                         </figcaption>
                     </figure>
                 </div>
             </section>
 
-            <!-- ======================= FAQ ======================= -->
-            <section class="section faq" id="faq">
-                <div class="container container--narrow">
-                    <header class="section__head reveal">
-                        <p class="section__eyebrow">Вопросы</p>
-                        <h2 class="section__title">О чём спрашивают чаще всего</h2>
-                    </header>
+            <!-- ======================= ВОПРОСЫ ======================= -->
+            <section class="section faq" id="faq" aria-labelledby="faq-title">
+                <div class="container faq__container">
+                    <h2 class="h2" id="faq-title">Частые вопросы</h2>
 
                     <ul class="faq__list">
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-1" id="faq-question-1">
@@ -750,7 +813,7 @@
                                     отменяют чаще.</p>
                             </div>
                         </li>
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-2" id="faq-question-2">
@@ -762,10 +825,10 @@
                                 hidden>
                                 <p>Гражданам России, Беларуси и Казахстана виза для туристических поездок не нужна.
                                     Загранпаспорт должен быть действителен не менее 120 дней с даты въезда. Правила
-                                    меняются — проверьте перед вылетом на сайте консульства.</p>
+                                    меняются — проверьте их перед вылетом на сайте консульства.</p>
                             </div>
                         </li>
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-3" id="faq-question-3">
@@ -780,7 +843,7 @@
                                     стоимость в течение суток.</p>
                             </div>
                         </li>
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-4" id="faq-question-4">
@@ -791,11 +854,11 @@
                             <div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4"
                                 hidden>
                                 <p>Два аэропорта: Кайсери (ASR) — 75 км, Невшехир (NAV) — 40 км. Групповой трансфер
-                                    входит в пакетные туры, индивидуальный стоит €45 за машину. Из Стамбула летают
+                                    входит в программы, индивидуальный стоит €45 за машину. Из Стамбула летают
                                     прямые рейсы, в пути 1 час 20 минут.</p>
                             </div>
                         </li>
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-5" id="faq-question-5">
@@ -810,7 +873,7 @@
                                     кофта. Дроны запускать в национальном парке запрещено.</p>
                             </div>
                         </li>
-                        <li class="faq__item reveal">
+                        <li class="faq__item">
                             <h3>
                                 <button class="faq__question" type="button" aria-expanded="false"
                                     aria-controls="faq-answer-6" id="faq-question-6">
@@ -830,40 +893,37 @@
             </section>
 
             <!-- ======================= КОНТАКТЫ ======================= -->
-            <section class="section section--dark contacts" id="contacts">
+            <section class="section section--lapis contacts" id="contacts" aria-labelledby="contacts-title">
                 <div class="container contacts__container">
-                    <div class="contacts__info reveal">
-                        <p class="section__eyebrow">Контакты</p>
-                        <h2 class="section__title">Спланируем поездку вместе</h2>
+                    <div class="contacts__info">
+                        <h2 class="h2" id="contacts-title">Подберём программу под ваши даты</h2>
                         <p class="contacts__lead">
-                            Расскажите, когда приезжаете и что хотите увидеть, — вернёмся с вариантом программы
-                            в течение дня. Отвечаем на русском, английском и турецком.
+                            Напишите, когда приезжаете и что хотите увидеть. Вариант программы пришлём в течение
+                            дня; отвечаем по-русски, по-английски и по-турецки.
                         </p>
 
-                        <ul class="contacts__list">
-                            <li class="contacts__item">
-                                <span class="contacts__label">Офис</span>
-                                <span class="contacts__value">Гёреме, Невшехир, Турция<br>Müze Cd. 12</span>
-                            </li>
-                            <li class="contacts__item">
-                                <span class="contacts__label">Телефон</span>
-                                <a class="contacts__value contacts__value--link" href="tel:+905550000000">+90 555 000
-                                    00 00</a>
-                            </li>
-                            <li class="contacts__item">
-                                <span class="contacts__label">Почта</span>
-                                <a class="contacts__value contacts__value--link"
-                                    href="mailto:hello@peribaca.travel">hello@peribaca.travel</a>
-                            </li>
-                            <li class="contacts__item">
-                                <span class="contacts__label">Часы</span>
-                                <span class="contacts__value">Ежедневно, 08:00 — 21:00 (UTC+3)</span>
-                            </li>
-                        </ul>
+                        <dl class="contacts__list">
+                            <div>
+                                <dt>Офис</dt>
+                                <dd>Гёреме, Müze Cd. 12</dd>
+                            </div>
+                            <div>
+                                <dt>Телефон</dt>
+                                <dd><a href="tel:+905550000000">+90 555 000 00 00</a></dd>
+                            </div>
+                            <div>
+                                <dt>Почта</dt>
+                                <dd><a href="mailto:hello@peribaca.travel">hello@peribaca.travel</a></dd>
+                            </div>
+                            <div>
+                                <dt>Часы</dt>
+                                <dd>каждый день с 8:00 до 21:00 по местному времени</dd>
+                            </div>
+                        </dl>
                     </div>
 
-                    <form class="form contacts__form reveal" id="bookingForm" novalidate>
-                        <h3 class="form__title">Заявка на подбор маршрута</h3>
+                    <form class="form contacts__form" id="bookingForm" novalidate>
+                        <h3 class="form__title">Заявка на подбор программы</h3>
 
                         <div class="form__row">
                             <label class="form__field">
@@ -886,18 +946,18 @@
                                 <input class="form__input" type="text" name="dates" placeholder="например, 12—16 мая">
                             </label>
                             <label class="form__field">
-                                <span class="form__label">Интересует</span>
+                                <span class="form__label">Что интересует</span>
                                 <select class="form__input" name="service">
                                     <option>Подбор маршрута</option>
                                     <option>Рассвет на воздушном шаре</option>
                                     <option>Пешком по Долине роз</option>
-                                    <option>Подземный город Деринкую</option>
                                     <option>Джип-сафари по трём долинам</option>
                                     <option>Конная прогулка на закате</option>
                                     <option>Вечерний Гёреме и ужин в пещере</option>
-                                    <option>Пакет «Классика»</option>
-                                    <option>Пакет «Полное погружение»</option>
-                                    <option>Пакет «Приват»</option>
+                                    <option>Подземный город Деринкую</option>
+                                    <option>Программа «Классика»</option>
+                                    <option>Программа «Полное погружение»</option>
+                                    <option>Программа «Приват»</option>
                                 </select>
                             </label>
                         </div>
@@ -915,9 +975,9 @@
                             </label>
                         </div>
 
-                        <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>
+                        <button class="btn btn--block" type="submit">Отправить заявку</button>
                         <p class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
-                            Это демо-сайт — форма ничего никуда не отправляет.</p>
+                            Это демо-сайт: форма проверяет поля, но ничего не отправляет.</p>
                         <p class="form__status" data-form-status role="status" aria-live="polite"></p>
                     </form>
                 </div>
@@ -928,16 +988,9 @@
         <footer class="footer">
             <div class="container footer__container">
                 <div class="footer__brand">
-                    <a class="logo footer__logo" href="#hero" aria-label="PERIBACA — наверх">
-                        <svg class="logo__mark" width="28" height="30" viewBox="0 0 32 34" aria-hidden="true"
-                            focusable="false">
-                            <path
-                                d="M16 1C8.8 1 3 6.6 3 13.6c0 4.9 3.3 9.3 7.1 12.2h11.8C25.7 22.9 29 18.5 29 13.6 29 6.6 23.2 1 16 1Z"
-                                fill="currentColor" />
-                            <path
-                                d="M16 1c-3 0-5.4 5.6-5.4 12.6 0 4.9 1.2 9.3 3 12.2h4.8c1.8-2.9 3-7.3 3-12.2C21.4 6.6 19 1 16 1Z"
-                                fill="#E8A33D" />
-                            <path d="M11.6 27.4h8.8l-1.3 5.1h-6.2l-1.3-5.1Z" fill="currentColor" opacity=".55" />
+                    <a class="logo" href="#hero" aria-label="PERIBACA — наверх">
+                        <svg class="logo__mark" width="24" height="32" aria-hidden="true" focusable="false">
+                            <use href="#mark" />
                         </svg>
                         <span class="logo__text">PERIBACA</span>
                     </a>
@@ -946,41 +999,27 @@
 
                 <nav class="footer__nav" aria-label="Навигация в подвале">
                     <ul>
-                        <li><a href="#tours">Туры</a></li>
-                        <li><a href="#packages">Пакеты</a></li>
+                        <li><a href="#tours">Маршруты</a></li>
+                        <li><a href="#packages">Программы</a></li>
                         <li><a href="#story">Регион</a></li>
-                        <li><a href="#taste">Вкус и ремёсла</a></li>
-                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#taste">Кухня и ремёсла</a></li>
+                        <li><a href="#gallery">Фото</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
                         <li><a href="#faq">Вопросы</a></li>
                         <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </nav>
 
-                <div class="footer__social">
-                    <a class="social-link" href="#contacts" aria-label="Telegram">
-                        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path fill="currentColor"
-                                d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13.1l-4.5-1.4c-1-.3-1-1 .2-1.5l17.6-6.8c.8-.3 1.5.2 1.2 1z" />
-                        </svg>
-                    </a>
-                    <a class="social-link" href="#contacts" aria-label="WhatsApp">
-                        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path fill="currentColor"
-                                d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.2.3-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1Z" />
-                        </svg>
-                    </a>
-                    <a class="social-link" href="#contacts" aria-label="Instagram">
-                        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path fill="currentColor"
-                                d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.7-.1 4.8-.1Zm0 5.3a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm0 7.4a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8Zm5.7-7.6a1.1 1.1 0 1 1-2.1 0 1.1 1.1 0 0 1 2.1 0Z" />
-                        </svg>
-                    </a>
-                </div>
+                <ul class="footer__social" aria-label="Мессенджеры и соцсети">
+                    <li><a href="#contacts">Telegram</a></li>
+                    <li><a href="#contacts">WhatsApp</a></li>
+                    <li><a href="#contacts">Instagram</a></li>
+                </ul>
             </div>
 
             <div class="container footer__bottom">
                 <p>© 2013—2026 PERIBACA. Демонстрационный проект: название, цены, отзывы и контакты вымышлены.</p>
-                <p>Вёрстка — <a href="https://portfolio-tawny-ten-75.vercel.app/" rel="noopener">Максим</a></p>
+                <p>Дизайн и вёрстка: <a href="https://portfolio-tawny-ten-75.vercel.app/" rel="noopener">Максим</a></p>
             </div>
         </footer>
     </div>
@@ -990,12 +1029,11 @@
         <div class="modal__overlay" data-modal-close></div>
         <div class="modal__window" role="document">
             <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
-                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" />
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" />
                 </svg>
             </button>
-            <h2 class="modal__title" id="modalTitle">Заявка на бронирование</h2>
+            <h2 class="modal__title" id="modalTitle">Бронирование</h2>
             <p class="modal__subtitle" data-modal-service>Подбор маршрута</p>
 
             <form class="form" id="modalForm" novalidate>
@@ -1032,7 +1070,7 @@
                     </label>
                 </div>
 
-                <button class="btn btn--primary btn--block" type="submit">Отправить</button>
+                <button class="btn btn--block" type="submit">Отправить заявку</button>
                 <p class="form__note">Демо-режим: заявка проверяется, но никуда не уходит.</p>
                 <p class="form__status" data-form-status role="status" aria-live="polite"></p>
             </form>
@@ -1042,16 +1080,14 @@
     <!-- ======================= ЛАЙТБОКС ГАЛЕРЕИ ======================= -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden>
         <button class="lightbox__close" type="button" data-lightbox-close aria-label="Закрыть просмотр">
-            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" />
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" />
             </svg>
         </button>
         <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev
             aria-label="Предыдущее фото">
-            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
             </svg>
         </button>
         <figure class="lightbox__figure">
@@ -1061,55 +1097,8 @@
             <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
         </figure>
         <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Следующее фото">
-            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
-    </div>
-
-    <!-- ======================= КНОПКА СВЯЗИ ======================= -->
-    <div class="fab" id="fab">
-        <div class="fab__list" id="fabList" hidden>
-            <a class="fab__item" href="tel:+905550000000">
-                <span class="fab__icon" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" />
-                    </svg>
-                </span>
-                Позвонить
-            </a>
-            <a class="fab__item" href="#contacts">
-                <span class="fab__icon" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13.1l-4.5-1.4c-1-.3-1-1 .2-1.5l17.6-6.8c.8-.3 1.5.2 1.2 1z" />
-                    </svg>
-                </span>
-                Написать в Telegram
-            </a>
-            <button class="fab__item" type="button" data-modal-open data-service="Консультация">
-                <span class="fab__icon" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" />
-                    </svg>
-                </span>
-                Оставить заявку
-            </button>
-        </div>
-        <button class="fab__toggle" type="button" id="fabToggle" aria-expanded="false" aria-controls="fabList"
-            aria-label="Открыть способы связи">
-            <svg class="fab__toggle-icon fab__toggle-icon--chat" width="24" height="24" viewBox="0 0 24 24"
-                aria-hidden="true" focusable="false">
-                <path fill="currentColor"
-                    d="M12 3C6.9 3 3 6.6 3 11c0 2.3 1.1 4.4 2.9 5.8L5 21l4.6-2.3c.8.2 1.6.3 2.4.3 5.1 0 9-3.6 9-8s-3.9-8-9-8Z" />
-            </svg>
-            <svg class="fab__toggle-icon fab__toggle-icon--close" width="24" height="24" viewBox="0 0 24 24"
-                aria-hidden="true" focusable="false">
-                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" />
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
             </svg>
         </button>
     </div>
