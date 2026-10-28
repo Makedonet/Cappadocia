@@ -1,7 +1,7 @@
 /* =============================================================
    PERIBACA — стили лендинга.
-   Палитра взята из фресок скальных церквей Гёреме: светлый туф,
-   лазурь Токалы, базальт шляпок «дымоходов» и охра.
+   Палитра тёплая, из самой Каппадокии: розовый туф Долины роз,
+   рассветное небо, марена турецких килимов, шафран и умбра.
 
    Порядок: токены → база → общие блоки (контейнер, секции, кнопки)
    → шапка → первый экран → маршруты → программы → регион → кухня
@@ -11,22 +11,22 @@
 
 /* ---------- Токены ---------- */
 :root {
-    --tuff: #EAE3DD;          /* фон: туф */
-    --ash: #DCD2CA;           /* второй фон: туф в тени */
-    --haze: #D5DBE7;          /* небо на рассвете */
-    --lapis: #1F3C8C;         /* заголовки, кнопки, тёмные секции */
-    --deep: #14234A;          /* подземный ярус, фото, подвал */
-    --basalt: #1B2232;        /* основной текст */
-    --muted: #515867;         /* второстепенный текст на светлом */
-    --ochre: #D59A48;         /* охра: только на тёмном и в крупном кегле */
-    --on-dark: #EAE3DD;
-    --on-dark-muted: #B9C1D6;
-    --error: #A3302A;
-    --field: #F5F1ED;
-    --field-border: #8B8079;
-    --line: rgba(27, 34, 50, .16);
-    --line-dark: rgba(234, 227, 221, .2);
-    --focus: var(--lapis);
+    --tuff: #F4E1CE;          /* фон: розовый туф Долины роз */
+    --ash: #EBCFB6;           /* второй фон: туф в тени */
+    --dawn: #F3C7AA;          /* небо на рассвете */
+    --madder: #962A1D;        /* марена килимов: заголовки, кнопки, тёмные секции */
+    --umber: #3A1C14;         /* умбра: подземный ярус, фото, подвал */
+    --basalt: #2D1B14;        /* основной текст */
+    --muted: #6B4E40;         /* второстепенный текст на светлом */
+    --saffron: #F2A93B;       /* шафран: на марене — только крупным кеглем (3,97:1) */
+    --on-dark: #F4E1CE;
+    --on-dark-muted: #E8C7AF;
+    --error: #B42318;
+    --field: #FBF2E9;
+    --field-border: #9A7B6B;
+    --line: rgba(45, 27, 20, .16);
+    --line-dark: rgba(244, 225, 206, .2);
+    --focus: var(--madder);
 
     --font-text: 'Literata', Georgia, 'Times New Roman', serif;
     /* У Sofia Sans по умолчанию болгарские формы кириллицы (д, п, т как g, n, m);
@@ -142,7 +142,7 @@ textarea {
     font-size: 20px;
     font-weight: 700;
     color: var(--tuff);
-    background-color: var(--lapis);
+    background-color: var(--madder);
     border-radius: var(--radius);
 }
 
@@ -162,16 +162,16 @@ textarea {
     padding: clamp(72px, 10vw, 136px) 0;
 }
 
-.section--lapis {
-    --focus: var(--ochre);
+.section--madder {
+    --focus: var(--saffron);
     color: var(--on-dark);
-    background-color: var(--lapis);
+    background-color: var(--madder);
 }
 
-.section--deep {
-    --focus: var(--ochre);
+.section--umber {
+    --focus: var(--saffron);
     color: var(--on-dark);
-    background-color: var(--deep);
+    background-color: var(--umber);
 }
 
 .section__head {
@@ -191,12 +191,12 @@ textarea {
     font-weight: 800;
     line-height: .9;
     letter-spacing: -.005em;
-    color: var(--lapis);
+    color: var(--madder);
     text-wrap: balance;
 }
 
-.section--lapis .h2,
-.section--deep .h2 {
+.section--madder .h2,
+.section--umber .h2 {
     color: var(--tuff);
 }
 
@@ -205,7 +205,7 @@ textarea {
     font-size: clamp(32px, 3.4vw, 46px);
     font-weight: 700;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .lead {
@@ -215,7 +215,7 @@ textarea {
     color: var(--muted);
 }
 
-.section--deep .lead {
+.section--umber .lead {
     color: var(--on-dark-muted);
 }
 
@@ -235,8 +235,8 @@ textarea {
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    background-color: var(--lapis);
-    border: 2px solid var(--lapis);
+    background-color: var(--madder);
+    border: 2px solid var(--madder);
     border-radius: 3px;
     transition: background-color .2s, color .2s, border-color .2s;
 }
@@ -247,7 +247,7 @@ textarea {
 }
 
 .btn--light {
-    color: var(--lapis);
+    color: var(--madder);
     background-color: var(--tuff);
     border-color: var(--tuff);
 }
@@ -255,13 +255,13 @@ textarea {
 .btn--line {
     color: var(--tuff);
     background-color: transparent;
-    border-color: rgba(234, 227, 221, .75);
+    border-color: rgba(244, 225, 206, .75);
 }
 
 .btn--line-dark {
-    color: var(--lapis);
+    color: var(--madder);
     background-color: transparent;
-    border-color: var(--lapis);
+    border-color: var(--madder);
 }
 
 .btn--sm {
@@ -276,32 +276,32 @@ textarea {
 
 @media (hover: hover) {
     .btn:hover {
-        background-color: var(--deep);
-        border-color: var(--deep);
+        background-color: var(--umber);
+        border-color: var(--umber);
     }
 
     .btn--light:hover {
-        color: var(--deep);
+        color: var(--umber);
         background-color: #fff;
         border-color: #fff;
     }
 
     .btn--line:hover {
-        color: var(--lapis);
+        color: var(--madder);
         background-color: var(--tuff);
         border-color: var(--tuff);
     }
 
     .btn--line-dark:hover {
         color: var(--tuff);
-        background-color: var(--lapis);
-        border-color: var(--lapis);
+        background-color: var(--madder);
+        border-color: var(--madder);
     }
 }
 
 /* ---------- Шапка ---------- */
 .header {
-    --focus: var(--ochre);
+    --focus: var(--saffron);
     position: fixed;
     top: 0;
     right: 0;
@@ -313,8 +313,8 @@ textarea {
 }
 
 .header--scrolled {
-    --focus: var(--lapis);
-    color: var(--lapis);
+    --focus: var(--madder);
+    color: var(--madder);
     background-color: var(--tuff);
     box-shadow: 0 1px 0 var(--line);
 }
@@ -395,15 +395,15 @@ textarea {
 
 .header__cta {
     flex-shrink: 0;
-    color: var(--lapis);
+    color: var(--madder);
     background-color: var(--tuff);
     border-color: var(--tuff);
 }
 
 .header--scrolled .header__cta {
     color: var(--tuff);
-    background-color: var(--lapis);
-    border-color: var(--lapis);
+    background-color: var(--madder);
+    border-color: var(--madder);
 }
 
 .burger {
@@ -451,14 +451,14 @@ textarea {
 
 /* ---------- Первый экран ---------- */
 .hero {
-    --focus: var(--ochre);
+    --focus: var(--saffron);
     position: relative;
     display: flex;
     min-height: 100vh;
     min-height: 100svh;
     overflow: hidden;
     color: var(--on-dark);
-    background-color: var(--deep);
+    background-color: var(--umber);
 }
 
 .hero__media img {
@@ -476,8 +476,8 @@ textarea {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to bottom, rgba(20, 35, 74, .55), rgba(20, 35, 74, 0) 24%),
-        linear-gradient(to top, rgba(20, 35, 74, .94), rgba(20, 35, 74, .7) 40%, rgba(20, 35, 74, .38) 66%, rgba(20, 35, 74, 0) 88%);
+        linear-gradient(to bottom, rgba(58, 28, 20, .55), rgba(58, 28, 20, 0) 24%),
+        linear-gradient(to top, rgba(58, 28, 20, .94), rgba(58, 28, 20, .7) 40%, rgba(58, 28, 20, .38) 66%, rgba(58, 28, 20, 0) 88%);
 }
 
 .hero__inner {
@@ -509,12 +509,12 @@ textarea {
     align-items: end;
     margin-top: clamp(24px, 4vh, 40px);
     padding-top: 24px;
-    border-top: 1px solid rgba(234, 227, 221, .3);
+    border-top: 1px solid rgba(244, 225, 206, .3);
 }
 
 .hero__text {
     max-width: 52ch;
-    color: rgba(234, 227, 221, .92);
+    color: rgba(244, 225, 206, .92);
 }
 
 .hero__actions {
@@ -526,7 +526,7 @@ textarea {
 
 .sunrise__icon {
     margin-bottom: 12px;
-    color: var(--ochre);
+    color: var(--saffron);
 }
 
 .sunrise__time {
@@ -538,7 +538,7 @@ textarea {
 
 .sunrise__time time {
     font-weight: 800;
-    color: var(--ochre);
+    color: var(--saffron);
 }
 
 .sunrise__note {
@@ -595,7 +595,7 @@ textarea {
    (.level__inner::before) и отметка яруса; шкала идёт поверх силуэта скал,
    поэтому у контейнера z-index выше, чем у .level__ground. */
 .tours {
-    background-color: var(--haze);
+    background-color: var(--dawn);
 }
 
 .tours__head {
@@ -654,7 +654,7 @@ textarea {
     font-size: 40px;
     font-weight: 800;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
     white-space: nowrap;
 }
 
@@ -664,7 +664,7 @@ textarea {
     font-size: clamp(36px, 4vw, 56px);
     font-weight: 800;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .level--sky .level__inner {
@@ -686,10 +686,10 @@ textarea {
 }
 
 .level--under {
-    --focus: var(--ochre);
+    --focus: var(--saffron);
     color: var(--on-dark);
-    background-color: var(--deep);
-    border-top: 6px solid #2A3A66;
+    background-color: var(--umber);
+    border-top: 6px solid #5A2A1E;
 }
 
 .level--under .level__mark {
@@ -768,7 +768,7 @@ textarea {
     font-size: 42px;
     font-weight: 800;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .price__unit {
@@ -850,7 +850,7 @@ textarea {
     font-size: clamp(36px, 3.6vw, 52px);
     font-weight: 800;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .plans__term {
@@ -889,13 +889,13 @@ textarea {
 
 /* Средняя программа выделена тоном колонки — цветом неба, без значков «хит» */
 .plans tr > :nth-child(3) {
-    background-color: rgba(213, 219, 231, .75);
+    background-color: rgba(243, 199, 170, .55);
 }
 
 .yes {
     font-size: 18px;
     font-weight: 700;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .no {
@@ -918,7 +918,7 @@ textarea {
 .story__text p {
     max-width: 56ch;
     margin-top: 22px;
-    color: rgba(234, 227, 221, .92);
+    color: rgba(244, 225, 206, .92);
 }
 
 .story__text p:first-of-type {
@@ -970,7 +970,7 @@ textarea {
     font-size: 30px;
     font-weight: 800;
     line-height: 1;
-    color: var(--ochre);
+    color: var(--saffron);
 }
 
 .timeline__title {
@@ -1020,8 +1020,8 @@ textarea {
     font-size: 28px;
     font-weight: 700;
     line-height: 1;
-    color: var(--lapis);
-    border-bottom: 2px solid var(--lapis);
+    color: var(--madder);
+    border-bottom: 2px solid var(--madder);
 }
 
 .dish {
@@ -1066,7 +1066,7 @@ textarea {
     font-family: var(--font-display);
     font-size: 22px;
     font-weight: 700;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .seasons dd {
@@ -1133,10 +1133,10 @@ textarea {
     width: 52px;
     height: 52px;
     padding: 0;
-    color: var(--lapis);
+    color: var(--madder);
     cursor: pointer;
     background: none;
-    border: 2px solid var(--lapis);
+    border: 2px solid var(--madder);
     border-radius: 3px;
     transition: background-color .2s, color .2s, opacity .2s;
 }
@@ -1149,7 +1149,7 @@ textarea {
 @media (hover: hover) {
     .reviews__arrow:not(:disabled):hover {
         color: var(--tuff);
-        background-color: var(--lapis);
+        background-color: var(--madder);
     }
 }
 
@@ -1176,7 +1176,7 @@ textarea {
     justify-content: space-between;
     gap: 28px;
     padding-top: 24px;
-    border-top: 3px solid var(--lapis);
+    border-top: 3px solid var(--madder);
     scroll-snap-align: start;
 }
 
@@ -1216,7 +1216,7 @@ textarea {
 }
 
 .faq__list {
-    border-top: 2px solid var(--lapis);
+    border-top: 2px solid var(--madder);
 }
 
 .faq__item {
@@ -1244,7 +1244,7 @@ textarea {
     flex-shrink: 0;
     width: 18px;
     height: 18px;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .faq__icon::before,
@@ -1283,7 +1283,7 @@ textarea {
 .contacts__lead {
     max-width: 46ch;
     margin-top: 24px;
-    color: rgba(234, 227, 221, .92);
+    color: rgba(244, 225, 206, .92);
 }
 
 .contacts__list {
@@ -1304,12 +1304,12 @@ textarea {
 }
 
 .contacts__list a {
-    text-decoration-color: rgba(234, 227, 221, .45);
+    text-decoration-color: rgba(244, 225, 206, .45);
     text-underline-offset: 3px;
 }
 
 .contacts__form {
-    --focus: var(--lapis);
+    --focus: var(--madder);
     padding: clamp(24px, 4vw, 48px);
     color: var(--basalt);
     background-color: var(--tuff);
@@ -1322,7 +1322,7 @@ textarea {
     font-size: 34px;
     font-weight: 700;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .form__row {
@@ -1360,13 +1360,13 @@ textarea {
 }
 
 .form__input::placeholder {
-    color: #7A7470;
+    color: #7E6254;
 }
 
 .form__input:focus {
     outline: none;
-    border-color: var(--lapis);
-    box-shadow: 0 0 0 3px rgba(31, 60, 140, .25);
+    border-color: var(--madder);
+    box-shadow: 0 0 0 3px rgba(150, 42, 29, .25);
 }
 
 .form__input.is-invalid {
@@ -1375,7 +1375,7 @@ textarea {
 
 select.form__input {
     padding-right: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231F3C8C' stroke-width='2'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23962A1D' stroke-width='2'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
 }
@@ -1409,8 +1409,8 @@ select.form__input {
     padding: 12px 14px;
     font-size: 15px;
     line-height: 1.5;
-    background-color: rgba(31, 60, 140, .08);
-    border-left: 3px solid var(--lapis);
+    background-color: rgba(150, 42, 29, .08);
+    border-left: 3px solid var(--madder);
 }
 
 .form__status.is-visible {
@@ -1427,11 +1427,11 @@ select.form__input {
 
 /* ---------- Подвал ---------- */
 .footer {
-    --focus: var(--ochre);
+    --focus: var(--saffron);
     padding: 64px 0 28px;
     font-size: 15px;
     color: var(--on-dark-muted);
-    background-color: var(--deep);
+    background-color: var(--umber);
 }
 
 .footer__container {
@@ -1514,7 +1514,7 @@ select.form__input {
 .modal__overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(20, 35, 74, .72);
+    background-color: rgba(58, 28, 20, .72);
 }
 
 .modal__window {
@@ -1525,7 +1525,7 @@ select.form__input {
     padding: 40px 36px 32px;
     overflow-y: auto;
     background-color: var(--tuff);
-    border-top: 6px solid var(--lapis);
+    border-top: 6px solid var(--madder);
     border-radius: var(--radius);
 }
 
@@ -1548,7 +1548,7 @@ select.form__input {
     font-size: 42px;
     font-weight: 800;
     line-height: 1;
-    color: var(--lapis);
+    color: var(--madder);
 }
 
 .modal__subtitle {
@@ -1576,7 +1576,7 @@ select.form__input {
 
 /* ---------- Лайтбокс ---------- */
 .lightbox {
-    --focus: var(--ochre);
+    --focus: var(--saffron);
     position: fixed;
     inset: 0;
     z-index: 110;
@@ -1585,7 +1585,7 @@ select.form__input {
     justify-content: center;
     padding: 64px 88px;
     color: var(--tuff);
-    background-color: rgba(12, 20, 42, .96);
+    background-color: rgba(36, 16, 11, .96);
 }
 
 .lightbox__figure {
@@ -1618,7 +1618,7 @@ select.form__input {
     padding: 0;
     color: inherit;
     cursor: pointer;
-    background: rgba(234, 227, 221, .08);
+    background: rgba(244, 225, 206, .08);
     border: 0;
     border-radius: 3px;
 }
@@ -1649,7 +1649,7 @@ select.form__input {
 
     .lightbox__close:hover,
     .lightbox__nav:hover {
-        background-color: rgba(234, 227, 221, .18);
+        background-color: rgba(244, 225, 206, .18);
     }
 }
 
@@ -1698,7 +1698,7 @@ select.form__input {
         overflow-y: auto;
         color: var(--tuff);
         visibility: hidden;
-        background-color: var(--deep);
+        background-color: var(--umber);
         opacity: 0;
         transition: opacity .25s, visibility 0s .25s;
     }
@@ -1725,18 +1725,18 @@ select.form__input {
     }
 
     .nav__link.is-active {
-        color: var(--ochre);
+        color: var(--saffron);
     }
 
     .header--menu-open {
-        --focus: var(--ochre);
+        --focus: var(--saffron);
         color: var(--tuff);
-        background-color: var(--deep);
+        background-color: var(--umber);
         box-shadow: none;
     }
 
     .header--menu-open .header__cta {
-        color: var(--lapis);
+        color: var(--madder);
         background-color: var(--tuff);
         border-color: var(--tuff);
     }
